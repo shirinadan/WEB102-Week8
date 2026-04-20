@@ -4,7 +4,7 @@ Submitted by: **Shirina Shaji Daniel**
 
 This web app: **allows users to create, view, edit, and delete custom crewmates using a Supabase database. Users can assign categories to crewmates, which changes the role options available during creation and editing. The app also includes a gallery with summary statistics and a custom crew success metric that changes the appearance of the crewmate list.**
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## Required Features
 
@@ -34,14 +34,14 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [x] A crewmate can be given a category upon creation which restricts their attribute value options
+- [x] A crewmate can be given a category upon creation, which restricts their attribute value options
   - [x] Users can choose a `category` option before finalizing role selection
   - [x] Based on the category value, users are allowed to access only a subset of the possible roles/attributes
 
 - [x] A section of the summary page displays summary statistics about a user’s crew on their crew page
   - [x] The crew page shows totals and percentages for selected crew attributes and categories
 
-- [x] The summary page displays a custom “success” metric about a user’s crew which changes the look of the crewmate list
+- [x] The summary page displays a custom “success” metric about a user’s crew, which changes the look of the crewmate list
   - [x] The gallery styling changes based on the computed crew success score
 
 The following **additional** features are implemented:
