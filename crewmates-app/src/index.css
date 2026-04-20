@@ -23,6 +23,7 @@ button {
   cursor: pointer;
   margin-top: 1rem;
   font-weight: bold;
+  transition: 0.2s ease;
 }
 
 button:hover {
@@ -141,7 +142,7 @@ label {
   justify-content: center;
   align-items: flex-start;
   gap: 1.5rem;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -164,6 +165,11 @@ label {
 
 .form-box label {
   margin-bottom: 0.45rem;
+}
+
+.form-box p {
+  text-align: center;
+  color: #f3f4f6;
 }
 
 .full-width-btn {
@@ -198,6 +204,7 @@ label {
   text-align: center;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: 0.2s ease;
 }
 
 .card h3 {
@@ -207,6 +214,39 @@ label {
 
 .card p {
   margin: 0.45rem 0;
+}
+
+/* STATS PANEL */
+.stats-panel {
+  background: #666;
+  padding: 1.5rem;
+  border-radius: 16px;
+  max-width: 520px;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.stats-panel h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.stats-panel p {
+  margin: 0.6rem 0;
+  font-size: 1rem;
+}
+
+/* SUCCESS METRIC STYLES */
+.gallery-page.elite .card {
+  border: 3px solid gold;
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.5);
+}
+
+.gallery-page.promising .card {
+  border: 2px solid #60a5fa;
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.35);
 }
 
 /* DETAIL PAGE */
@@ -296,5 +336,13 @@ label {
   .form-box {
     width: 100%;
     max-width: 320px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-panel {
+    width: 100%;
   }
 }

@@ -8,6 +8,7 @@ function CrewmateCard({ mate }) {
       </Link>
       <p><strong>Speed:</strong> {mate.speed}</p>
       <p><strong>Color:</strong> {mate.color}</p>
+      <p><strong>Category:</strong> {mate.category}</p>
       <p><strong>Role:</strong> {mate.role}</p>
 
       <Link to={`/crew/${mate.id}/edit`}>

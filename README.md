@@ -1,8 +1,8 @@
-# Web Development Project 7 - *CrewMate*
+# Web Development Project 7 - Crewmates
 
 Submitted by: **Shirina Shaji Daniel**
 
-This web app: **insert description**
+This web app: **allows users to create, view, edit, and delete custom crewmates using a Supabase database. Users can assign categories to crewmates, which changes the role options available during creation and editing. The app also includes a gallery with summary statistics and a custom crew success metric that changes the appearance of the crewmate list.**
 
 Time spent: **X** hours spent in total
 
@@ -10,61 +10,60 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
+- [x] **The web app contains a page that features a create form to add a new crewmate**
+  - [x] Users can name the crewmate
+  - [x] Users can set the crewmate’s attributes by clicking on one of several values
 
-- [ ] **The web app contains a page that features a create form to add a new crewmate**
-  - Users can name the crewmate
-  - Users can set the crewmate’s attributes by clicking on one of several values
-- [ ] **The web app includes a summary page of all the user’s added crewmatese**
-  -  The web app contains a summary page dedicated to displaying all the crewmates the user has made so far
-  -  The summary page is sorted by creation date such that the most recently created crewmates appear at the top
-- [ ] **A previously created crewmate can be updated from the list of crewmates in the summary page**
-  - Each crewmate has an edit button that will take users to an update form for the relevant crewmate
-  - Users can see the current attributes of their crewmate on the update form
-  - After editing the crewmate's attribute values using the form, the user can immediately see those changes reflected in the update form and on the summary page 
-- [ ] **A previously created crewmate can be deleted from the crewmate list**
-  - Using the edit form detailed in the previous _crewmates can be updated_ feature, there is a button that allows users to delete that crewmate
-  - After deleting a crewmate, the crewmate should no longer be visible in the summary page
-  - [ ] **Each crewmate has a direct, unique URL link to an info page about them**
-    - Clicking on a crewmate in the summary page navigates to a detail page for that crewmate
-    - The detail page contains extra information about the crewmate not included in the summary page
-    - Users can navigate to to the edit form from the detail page
+- [x] **The web app includes a summary page of all the user’s added crewmates**
+  - [x] The web app contains a summary page dedicated to displaying all the crewmates the user has made so far
+  - [x] The summary page is sorted by creation date such that the most recently created crewmates appear at the top
+
+- [x] **A previously created crewmate can be updated from the list of crewmates in the summary page**
+  - [x] Each crewmate has an edit button that will take users to an update form for the relevant crewmate
+  - [x] Users can see the current attributes of their crewmate on the update form
+  - [x] After editing the crewmate's attribute values using the form, the user can immediately see those changes reflected in the update form and on the summary page 
+
+- [x] **A previously created crewmate can be deleted from the crewmate list**
+  - [x] Using the edit form detailed in the previous _crewmates can be updated_ feature, there is a button that allows users to delete that crewmate
+  - [x] After deleting a crewmate, the crewmate should no longer be visible in the summary page
+
+- [x] **Each crewmate has a direct, unique URL link to an info page about them**
+  - [x] Clicking on a crewmate in the summary page navigates to a detail page for that crewmate
+  - [x] The detail page contains extra information about the crewmate not included in the summary page
+  - [x] Users can navigate to the edit form from the detail page
 
 The following **optional** features are implemented:
 
-- [ ] A crewmate can be given a category upon creation which restricts their attribute value options
-  - e.g., a Dungeons and Dragons class or a development team role (project manager, product owner, etc.)
-  - User can choose a `category` option to describe their crewmate before any attributes are specified
-  - Based on the category value, users are allowed to access only a subset of the possible attributes
-- [ ] A section of the summary page, displays summary statistics about a user’s crew on their crew page
-  - e.g., the percent of members with a certain attribute 
-- [ ] The summary page displays a custom “success” metric about a user’s crew which changes the look of the crewmate list
-  - e.g., a pirate crew’s predicted success at commandeering a new galley
+- [x] A crewmate can be given a category upon creation which restricts their attribute value options
+  - [x] Users can choose a `category` option before finalizing role selection
+  - [x] Based on the category value, users are allowed to access only a subset of the possible roles/attributes
 
+- [x] A section of the summary page displays summary statistics about a user’s crew on their crew page
+  - [x] The crew page shows totals and percentages for selected crew attributes and categories
+
+- [x] The summary page displays a custom “success” metric about a user’s crew which changes the look of the crewmate list
+  - [x] The gallery styling changes based on the computed crew success score
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+- [x] Sidebar-based themed layout inspired by the exemplar
+- [x] Dark-mode styled interface with custom card-based forms
+- [x] Dynamic crew category and role system
+- [x] Persistent Supabase backend integration for CRUD functionality
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+<img src="walkthrough-week8.gif" title="Video Walkthrough" width="" alt="Video Walkthrough" />
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+One challenge was setting up Supabase correctly, especially finding the API URL and publishable key and making sure the frontend connected successfully. Another challenge was styling the project to better match the exemplar layout while also implementing the required CRUD functionality and the optional category/statistics/success metric features.
 
 ## License
 
-    Copyright [2026] [Shirina Shaji Daniel]
+    Copyright 2026 Shirina Shaji Daniel
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

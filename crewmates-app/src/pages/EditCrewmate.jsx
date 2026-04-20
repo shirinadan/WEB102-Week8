@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient'
 
+const roleOptions = {
+  Space: ['Pilot', 'Engineer', 'Medic', 'Scout'],
+  Fantasy: ['Wizard', 'Knight', 'Healer', 'Rogue'],
+  Tech: ['Frontend Dev', 'Backend Dev', 'Designer', 'Product Manager']
+}
+
 function EditCrewmate() {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -10,6 +16,7 @@ function EditCrewmate() {
     name: '',
     speed: '',
     color: '',
+    category: '',
     role: '',
     catchphrase: ''
   })
@@ -33,7 +40,20 @@ function EditCrewmate() {
   }, [id])
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+
+    if (name === 'category') {
+      setFormData({
+        ...formData,
+        category: value,
+        role: ''
+      })
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      })
+    }
   }
 
   const handleUpdate = async (e) => {
@@ -41,13 +61,7 @@ function EditCrewmate() {
 
     const { error } = await supabase
       .from('crewmates')
-      .update({
-        name: formData.name,
-        speed: formData.speed,
-        color: formData.color,
-        role: formData.role,
-        catchphrase: formData.catchphrase
-      })
+      .update(formData)
       .eq('id', id)
       .select()
 
@@ -76,72 +90,42 @@ function EditCrewmate() {
   }
 
   return (
-    <div className="page">
+    <div className="edit-page">
       <h1>Edit Crewmate</h1>
 
-      <form className="form" onSubmit={handleUpdate}>
+      <form className="edit-form" onSubmit={handleUpdate}>
         <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
 
         <label>Speed</label>
-        <select
-          name="speed"
-          value={formData.speed}
-          onChange={handleChange}
-          required
-        >
-          <option value="Slow">Slow</option>
-          <option value="Medium">Medium</option>
-          <option value="Fast">Fast</option>
-        </select>
+        <input type="text" name="speed" value={formData.speed} onChange={handleChange} required />
 
         <label>Color</label>
-        <select
-          name="color"
-          value={formData.color}
-          onChange={handleChange}
-          required
-        >
-          <option value="Red">Red</option>
-          <option value="Blue">Blue</option>
-          <option value="Green">Green</option>
-          <option value="Purple">Purple</option>
-          <option value="Yellow">Yellow</option>
+        <input type="text" name="color" value={formData.color} onChange={handleChange} required />
+
+        <label>Category</label>
+        <select name="category" value={formData.category} onChange={handleChange} required>
+          <option value="">Select category</option>
+          <option value="Space">Space</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Tech">Tech</option>
         </select>
 
         <label>Role</label>
-        <select
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-          required
-        >
-          <option value="Pilot">Pilot</option>
-          <option value="Engineer">Engineer</option>
-          <option value="Medic">Medic</option>
-          <option value="Scout">Scout</option>
+        <select name="role" value={formData.role} onChange={handleChange} required>
+          <option value="">Select role</option>
+          {formData.category &&
+            roleOptions[formData.category].map((role) => (
+              <option key={role} value={role}>
+                {role}
+              </option>
+            ))}
         </select>
-
-        <label>Catchphrase</label>
-        <input
-          type="text"
-          name="catchphrase"
-          value={formData.catchphrase || ''}
-          onChange={handleChange}
-        />
 
         <button type="submit">Update Crewmate</button>
       </form>
 
-      <button className="delete-btn" onClick={handleDelete}>
-        Delete Crewmate
-      </button>
+      <button className="delete-btn" onClick={handleDelete}>Delete Crewmate</button>
     </div>
   )
 }
